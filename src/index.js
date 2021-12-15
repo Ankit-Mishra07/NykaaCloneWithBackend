@@ -82,7 +82,26 @@ app.use("/all", productcontroller)
 const cartController = require("./controllers/cart.controller")
 
 app.use("/addcart", cartController)
+app.get("/pages",async(req,res)=>{
+    try{
+        const page=+req.query.page || 10; 
+        const size = +req.query.size || 15
 
+        const skip = (page-1)*size
+        const products  = await Product.find().skip(skip).limit(size).lean().exec()
+        const totalpages = Math.ceil(await Product.find().countDocuments()/size)
+        console.log({products,totalpages})
+        return res.json({products,totalpages})
+      
+
+    }catch(e)
+    {
+
+        return res.status(500).json({status:"failed",message:e.message});
+
+
+    }
+})
 
 module.exports = app
 
