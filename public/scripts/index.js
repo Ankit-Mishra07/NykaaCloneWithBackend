@@ -275,20 +275,33 @@ if(localStorage.getItem("NykaaCart") === null) {
       localStorage.setItem("NykaaTotal" , JSON.stringify([]))
   }
 
-  let getLocalCart = JSON.parse(localStorage.getItem("NykaaCart"))
+//  let getLocalCart = JSON.parse(localStorage.getItem("NykaaCart"))
 
 
-  let supp = document.querySelector(".supp")
-  supp.textContent = getLocalCart.length
+//   let supp = document.querySelector(".supp")
+//   supp.textContent = getLocalCart.length
 
   //let showCart_Products = document.querySelector(".showCart-Products")
-  let multiple_prod_box = document.querySelector(".multiple_prod_box")
+let multiple_prod_box = document.querySelector(".multiple_prod_box")
+
+  async function CartdataBase() {
+  let res = await fetch("http://localhost:2005/addcart")
+  
+  let data = await res.json()
+
+  
+  let supp = document.querySelector(".supp")
+  supp.textContent = data.length
+  
+  appendtobag(data)
+  }
+  CartdataBase()
 
   function appendtobag(art) {
     
-let grandtotal = 0
+    let grandtotal = 0
     multiple_prod_box.innerHTML = null
-  art.forEach((produ) => {
+    art.forEach((produ) => {
 
     grandtotal = grandtotal + Number(produ.price)
     let showCart_Products = document.createElement("div")
@@ -373,10 +386,16 @@ localStorage.setItem("NykaaTotal" , JSON.stringify(NykaaTotal))
 
 
 function DeleteFrom_Bag(produ, dlt_btn) {
-    let getCartStORE = JSON.parse(localStorage.getItem("NykaaCart"))
-    let index = getCartStORE.indexOf(produ)
-    getCartStORE.splice(index, 1)
-    localStorage.setItem("NykaaCart" , JSON.stringify(getCartStORE))
+
+    let GETTODLT = fetch(`http://localhost:2005/dltcart/${produ._id}`, {
+        method : "DELETE"
+    })
+
+
+    // let getCartStORE = JSON.parse(localStorage.getItem("NykaaCart"))
+    // let index = getCartStORE.indexOf(produ)
+    // getCartStORE.splice(index, 1)
+    // localStorage.setItem("NykaaCart" , JSON.stringify(getCartStORE))
 
     dlt_btn.parentNode.parentNode.remove()
 
@@ -475,8 +494,7 @@ function EDITPrice5() {
 
 
 
-appendtobag(getLocalCart)
-localStorage.setItem("NykaaCart" , JSON.stringify(getLocalCart))
+// localStorage.setItem("NykaaCart" , JSON.stringify(getLocalCart))
 
 
 
