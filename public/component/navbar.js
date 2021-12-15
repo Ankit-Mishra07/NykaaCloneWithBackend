@@ -7,13 +7,13 @@ function navbar() {
     </div>        
 
 <ul class="nav-list">
-    <li><a href="getapp.html" class="first-icon"><i class="fa">&#xf10b;</i> &nbsp;Get App</a></li>
+    <li><a href="/getapp" class="first-icon"><i class="fa">&#xf10b;</i> &nbsp;Get App</a></li>
     <li class="vertical-line">|</li>
     <li><a href="/" class="first-icon"><i class="material-icons">&#xe0c8;</i>&nbsp;Store & Events</a></li>
     <li class="vertical-line">|</li>
     <li><a href="/" class="first-icon"><i class="material-icons">&#xe8f6;</i>&nbsp;Gift Card</a></li>
     <li class="vertical-line">|</li>
-    <li><a href="help.html" class="first-icon"><i class="material-icons">&#xe8fd;</i>&nbsp;Help</a></li>
+    <li><a href="/help" class="first-icon"><i class="material-icons">&#xe8fd;</i>&nbsp;Help</a></li>
 </ul>
 </div>
 
@@ -24,7 +24,7 @@ function navbar() {
     <ul class="second-navlist">
       <li> <a href="index.html"><img src="https://th.bing.com/th/id/OIP.FtW_F_xyCB7utV0PyI8FeAHaCb?w=308&h=114&c=7&r=0&o=5&pid=1.7" alt=""  id="nykaa-logo"></a></li>
        <li><a href="/">CATEGORIES</li></a>
-       <li><a href="ProductNykaaCosmetics.html" class="show-brandbox">BRANDS</a></li>
+       <li><a href="/ProductNykaaCosmetics" class="show-brandbox">BRANDS</a></li>
        <li><a href="/" class="show-nykaa_fashionBox">NYKAA FASHION</a></li>
        <li><a href="/" class="Show-nykaa-beautybox">BEAUTY ADVICE</a></li>
        <li><a href="/">NYKAA NETWORK</a></li>
@@ -36,14 +36,14 @@ function navbar() {
     <i class="material-icons search-icon">&#xe8b6;</i><input type="text" placeholder="Search on Nykaa" class="second-search">
     </div>
     <div class="Account-BOX">
-        <a id="FOR-Sign" href="http://localhost:5500/Signin.html"><i id="user--icon" class="fa">&#xf2c0;</i><span class="account-text">Account</span></a>
+        <a id="FOR-Sign" href="/login"><i id="user--icon" class="fa">&#xf2c0;</i><span class="account-text">Account</span></a>
         <a id="FOR-Logged"><i id="user--icon" class="fa">&#xf2c0;</i><span class="user-name">Ankit</span></a>
         <div class="PROFILE-NAVIGATE">
         <a href="Myorder.html">📑 &nbsp; Orders</a> 
-        <a href="Myprofile.html">웃 &nbsp; Profile</a>
+        <a href="/Myprofile">웃 &nbsp; Profile</a>
         <a href="Myprofile.html">⍌ &nbsp; Wallet</a>
         <a href="Mywish.html">♡ &nbsp; Wishlist</a>
-        <a class="Sign-Out" href="index.html">⊘ &nbsp; Logout</a>
+        <a class="Sign-Out" href="/">⊘ &nbsp; Logout</a>
         </div>
     </div>
     <div>
@@ -58,12 +58,12 @@ function navbar() {
 class="search-resultbox">
 
 <p class="trending-search-text">Trending Searches</p>
-<a href="ProductNykaaCosmetics.html">↝ Nykaa Cosmetics</a>
-<a href="ProductNykaaCosmetics.html">↝ Nykaa Naturals</a>
-<a href="ProductNykaaCosmetics.html">↝ Nykaa Popular Products</a>
-<a href="ProductNykaaCosmetics.html">↝ Nykaa Cosmetics Lipstick</a>
-<a href="ProductNykaaCosmetics.html">↝ Nykaa Cosmetics Eyes products</a>
-<a href="ProductNykaaCosmetics.html">↝ Nykaa Cosmetics Hair products</a>
+<a href="/ProductNykaaCosmetics">↝ Nykaa Cosmetics</a>
+<a href="/ProductNykaaCosmetics">↝ Nykaa Naturals</a>
+<a href="/ProductNykaaCosmetics">↝ Nykaa Popular Products</a>
+<a href="/ProductNykaaCosmetics">↝ Nykaa Cosmetics Lipstick</a>
+<a href="/ProductNykaaCosmetics">↝ Nykaa Cosmetics Eyes products</a>
+<a href="/ProductNykaaCosmetics">↝ Nykaa Cosmetics Hair products</a>
 
 </div>
 

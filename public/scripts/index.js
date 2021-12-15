@@ -809,9 +809,10 @@ localStorage.setItem("userData" , JSON.stringify(GetUserData))
 // LOGOUT
 
 let sign_out = document.querySelector(".Sign-Out")
-
+let sign_o = document.querySelector(".Sign-O")
 
 sign_out.addEventListener("click" , SIGNOUT)
+// sign_o.addEventListener("click" , SIGNOUT)
 
 function SIGNOUT() {
     JSON.parse(localStorage.removeItem("userData"))
