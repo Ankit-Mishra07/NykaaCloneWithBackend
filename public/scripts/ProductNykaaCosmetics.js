@@ -151,8 +151,6 @@ async function GETCosNykaaProducts() {
 
   let res = await fetch(`http://localhost:2005/all`)
   let data = await res.json()
-  console.log(data)
-
   
  AppendToProCont(data)
 }
@@ -237,11 +235,23 @@ if(localStorage.getItem("NykaaCart") === null) {
 }
 
 function AddToCartStore(prodct) {
-  let getCartStore = JSON.parse(localStorage.getItem("NykaaCart"))
 
-  getCartStore.push(prodct)
 
-  localStorage.setItem("NykaaCart" , JSON.stringify(getCartStore))
+  fetch("http://localhost:2005/addcart", {
+    method: "POST",
+    body : JSON.stringify(prodct),
+    headers : {
+      "Content-Type" : "application/json"
+    }
+  })
+  .then(res => console.log(res))
+  .catch(e => console.log("error"))
+
+  // let getCartStore = JSON.parse(localStorage.getItem("NykaaCart"))
+
+  // getCartStore.push(prodct)
+
+  // localStorage.setItem("NykaaCart" , JSON.stringify(getCartStore))
   window.location.href = "/ProductNykaaCosmetics"
 }
 
@@ -284,7 +294,7 @@ SORTHIGHTOLOW.addEventListener("click" , fnSORTHIGHTOLOW)
  async function fnSORTHIGHTOLOW() {
 
 
-  let res = await fetch(`http://localhost:5000/api/products`)
+  let res = await fetch(`http://localhost:2005/all`)
 
   let data = await res.json()
     
@@ -305,7 +315,7 @@ SORTLOWTOHIGH.addEventListener("click" , fnSORTLOWTOHIGH)
 
 async function fnSORTLOWTOHIGH() {
 
-  let res = await fetch(`http://localhost:5000/api/products`)
+  let res = await fetch(`http://localhost:2005/all`)
 
   let data = await res.json()
     
