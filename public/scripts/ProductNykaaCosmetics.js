@@ -1,4 +1,200 @@
+var bo = document.getElementById("bo");
+var to = document.getElementById("to");
+var tho = document.getElementById("tho");
+var fo = document.getElementById("fo");
+var fi = document.getElementById("fi");
+var si = document.getElementById("si");
+var se = document.getElementById("se");
+var ei = document.getElementById("ei");
 
+var page = 1;
+function first(){
+  bo.style.backgroundColor="#fc2779"
+  to.style.backgroundColor="#F3F3F3"
+  tho.style.backgroundColor="#F3F3F3"
+  fo.style.backgroundColor="#F3F3F3";
+  fi.style.backgroundColor="#F3F3F3";
+  si.style.backgroundColor="#F3F3F3";
+  se.style.backgroundColor="#F3F3F3";
+  ei.style.backgroundColor="#F3F3F3";
+  page = 1;
+  async function GETCosNykaaProducts() {
+
+    let res = await fetch(`http://localhost:2005/pages?page=${page}&size=15`)
+    
+    let data = await res.json()
+    console.log(data.products);
+   AppendToProCont(data.products)
+  }
+  
+  
+  GETCosNykaaProducts()
+}
+function second(){
+  bo.style.backgroundColor="#F3F3F3"
+  to.style.backgroundColor="#fc2779"
+  tho.style.backgroundColor="#F3F3F3"
+  fo.style.backgroundColor="#F3F3F3";
+  fi.style.backgroundColor="#F3F3F3";
+  si.style.backgroundColor="#F3F3F3";
+  se.style.backgroundColor="#F3F3F3";
+  ei.style.backgroundColor="#F3F3F3";
+  page = 2;
+  async function GETCosNykaaProducts() {
+
+    let res = await fetch(`http://localhost:2005/pages?page=${page}&size=15`)
+    
+    let data = await res.json()
+    console.log(data.products);
+   AppendToProCont(data.products)
+  }
+  
+  
+  GETCosNykaaProducts()
+  console.log(page)
+}
+console.log(page)
+function third(){
+  bo.style.backgroundColor="#F3F3F3"
+  to.style.backgroundColor="#F3F3F3"
+  tho.style.backgroundColor="#fc2779"
+  fo.style.backgroundColor="#F3F3F3";
+  fi.style.backgroundColor="#F3F3F3";
+  si.style.backgroundColor="#F3F3F3";
+  se.style.backgroundColor="#F3F3F3";
+  ei.style.backgroundColor="#F3F3F3";
+  page=3;
+  async function GETCosNykaaProducts() {
+
+    let res = await fetch(`http://localhost:2005/pages?page=${page}&size=15`)
+    
+    let data = await res.json()
+    console.log(data.products);
+   AppendToProCont(data.products)
+  }
+  
+  
+  GETCosNykaaProducts()
+}
+function fourth(){
+  bo.style.backgroundColor="#F3F3F3"
+  to.style.backgroundColor="#F3F3F3"
+  tho.style.backgroundColor="#F3F3F3"
+  fo.style.backgroundColor="#fc2779";
+  fi.style.backgroundColor="#F3F3F3";
+  si.style.backgroundColor="#F3F3F3";
+  se.style.backgroundColor="#F3F3F3";
+  ei.style.backgroundColor="#F3F3F3";
+  page=4;
+  async function GETCosNykaaProducts() {
+
+    let res = await fetch(`http://localhost:2005/pages?page=${page}&size=15`)
+    
+    let data = await res.json()
+    console.log(data.products);
+   AppendToProCont(data.products)
+  }
+  
+  
+  GETCosNykaaProducts()
+}
+function five(){
+  bo.style.backgroundColor="#F3F3F3"
+  to.style.backgroundColor="#F3F3F3"
+  tho.style.backgroundColor="#F3F3F3"
+  fo.style.backgroundColor="#F3F3F3";
+  fi.style.backgroundColor="#fc2779";
+  si.style.backgroundColor="#F3F3F3";
+  se.style.backgroundColor="#F3F3F3";
+  ei.style.backgroundColor="#F3F3F3";
+  page=5
+  async function GETCosNykaaProducts() {
+
+    let res = await fetch(`http://localhost:2005/pages?page=${page}&size=15`)
+    
+    let data = await res.json()
+    console.log(data.products);
+   AppendToProCont(data.products)
+  }
+  
+  
+  
+  GETCosNykaaProducts()
+}
+
+
+
+function sixth(){
+  bo.style.backgroundColor="#F3F3F3"
+  to.style.backgroundColor="#F3F3F3"
+  tho.style.backgroundColor="#F3F3F3"
+  fo.style.backgroundColor="#F3F3F3";
+  fi.style.backgroundColor="#F3F3F3";
+  si.style.backgroundColor="#fc2779";
+  se.style.backgroundColor="#F3F3F3";
+  ei.style.backgroundColor="#F3F3F3";
+  page=5
+  async function GETCosNykaaProducts() {
+
+    let res = await fetch(`http://localhost:2005/pages?page=${page}&size=15`)
+    
+    let data = await res.json()
+    console.log(data.products);
+   AppendToProCont(data.products)
+  }
+  
+  
+  
+  GETCosNykaaProducts()
+}
+
+
+function seven(){
+  bo.style.backgroundColor="#F3F3F3"
+  to.style.backgroundColor="#F3F3F3"
+  tho.style.backgroundColor="#F3F3F3"
+  fo.style.backgroundColor="#F3F3F3";
+  fi.style.backgroundColor="#F3F3F3";
+  si.style.backgroundColor="#F3F3F3";
+  se.style.backgroundColor="#fc2779";
+  ei.style.backgroundColor="#F3F3F3";
+  page=5
+  async function GETCosNykaaProducts() {
+
+    let res = await fetch(`http://localhost:2005/pages?page=${page}&size=15`)
+    
+    let data = await res.json()
+    console.log(data.products);
+   AppendToProCont(data.products)
+  }
+  
+  
+  
+  GETCosNykaaProducts()
+}
+function eight(){
+  bo.style.backgroundColor="#F3F3F3"
+  to.style.backgroundColor="#F3F3F3"
+  tho.style.backgroundColor="#F3F3F3"
+  fo.style.backgroundColor="#F3F3F3";
+  fi.style.backgroundColor="#F3F3F3";
+  si.style.backgroundColor="#F3F3F3";
+  se.style.backgroundColor="#F3F3F3";
+  ei.style.backgroundColor="#fc2779";
+  page=5
+  async function GETCosNykaaProducts() {
+
+    let res = await fetch(`http://localhost:2005/pages?page=${page}&size=15`)
+    
+    let data = await res.json()
+    console.log(data.products);
+   AppendToProCont(data.products)
+  }
+  
+  
+  
+  GETCosNykaaProducts()
+}
 
 
 var slideindexval = 1;
@@ -149,10 +345,10 @@ let Products_Container = document.querySelector(".NykaaCosProducts-Container")
 
 async function GETCosNykaaProducts() {
 
-  let res = await fetch(`http://localhost:2005/all`)
+  let res = await fetch(`http://localhost:2005/pages?page=${page}&size=15`)
   let data = await res.json()
   
- AppendToProCont(data)
+ AppendToProCont(data.products)
 }
 
 
