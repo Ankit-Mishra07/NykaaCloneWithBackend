@@ -11,9 +11,21 @@ if(localStorage.getItem("NykaaCart") === null) {
 
 let prod_count = document.querySelector(".prod-count")
 
-let getWishStore = JSON.parse(localStorage.getItem("NykaaWish"))
+// let getWishStore = JSON.parse(localStorage.getItem("NykaaWish"))
 
-prod_count.textContent = "(" + getWishStore.length + ")"
+async function WishFromDataBase() {
+    let res = await fetch("http://localhost:2005/addwish" , {
+        method: "GET"
+    })
+  
+    let data = await res.json()
+    console.log(data)
+    
+    prod_count.textContent = "(" + data.length + ")"
+    AppendtoMYWISH_BOX(data)
+}
+WishFromDataBase()
+
 
 function AppendtoMYWISH_BOX(getWishStore) {
     MYWISH_BOX.innerHTML = null
@@ -60,37 +72,58 @@ function AppendtoMYWISH_BOX(getWishStore) {
     })
 }
 
-AppendtoMYWISH_BOX(getWishStore)
 
 function DLTFROMwish(prod) {
 
+    let GETTODLT = fetch(`http://localhost:2005/dltwish/${prod._id}`, {
+        method : "DELETE"
+    })
 
-    let index = getWishStore.indexOf(prod)
 
-    getWishStore.splice(index, 1)
+    // let index = getWishStore.indexOf(prod)
+
+    // getWishStore.splice(index, 1)
 
 
-    localStorage.setItem("NykaaWish" , JSON.stringify(getWishStore))
+    // localStorage.setItem("NykaaWish" , JSON.stringify(getWishStore))
 
-    window.location.href = "Mywish.html"
+    window.location.href = "/Mywish"
 }
 
 function MOVETOBAGfn(prod) {
 
-    let getCartstore = JSON.parse(localStorage.getItem("NykaaCart"))
+    
+  fetch("http://localhost:2005/addcart", {
+    method: "POST",
+    body : JSON.stringify(prod),
+    headers : {
+      "Content-Type" : "application/json"
+    }
+  })
+  .then(res => console.log(res))
+  .catch(e => console.log("error"))
+
+  let GETTODLT = fetch(`http://localhost:2005/dltwish/${prod._id}`, {
+    method : "DELETE"
+    })
+
+
+
     let grandTotaL = document.querySelector(".Toatlrupee")
     grandTotaL.textContent = Number(grandTotaL.textContent) + Number(prod.price)
-    getCartstore.push(prod)
-    localStorage.setItem("NykaaCart" , JSON.stringify(getCartstore))
+    window.location.href = "/Mywish"
 
-    let index = getWishStore.indexOf(prod)
+    // let getCartstore = JSON.parse(localStorage.getItem("NykaaCart"))
+    // getCartstore.push(prod)
+    // localStorage.setItem("NykaaCart" , JSON.stringify(getCartstore))
+
+    // let index = getWishStore.indexOf(prod)
 
 
 
-    getWishStore.splice(index, 1)
+    // getWishStore.splice(index, 1)
 
 
-    localStorage.setItem("NykaaWish" , JSON.stringify(getWishStore))
-    window.location.href = "Mywish.html"
+    // localStorage.setItem("NykaaWish" , JSON.stringify(getWishStore))
 
 }

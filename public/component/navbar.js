@@ -42,7 +42,7 @@ function navbar() {
         <a href="Myorder.html">📑 &nbsp; Orders</a> 
         <a href="/Myprofile">웃 &nbsp; Profile</a>
         <a href="Myprofile.html">⍌ &nbsp; Wallet</a>
-        <a href="Mywish.html">♡ &nbsp; Wishlist</a>
+        <a href="/Mywish">♡ &nbsp; Wishlist</a>
         <a class="Sign-Out" href="/">⊘ &nbsp; Logout</a>
         </div>
     </div>

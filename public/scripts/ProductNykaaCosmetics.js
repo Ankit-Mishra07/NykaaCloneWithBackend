@@ -256,11 +256,24 @@ function AddToCartStore(prodct) {
 }
 
 function AddToWishStore(prodWish) {
-  let getWishStore = JSON.parse(localStorage.getItem("NykaaWish"))
 
-  getWishStore.push(prodWish)
+  
 
-  localStorage.setItem("NykaaWish" , JSON.stringify(getWishStore))
+  fetch("http://localhost:2005/addwish", {
+    method: "POST",
+    body : JSON.stringify(prodWish),
+    headers : {
+      "Content-Type" : "application/json"
+    }
+  })
+  .then(res => console.log(res))
+  .catch(e => console.log("error"))
+
+  // let getWishStore = JSON.parse(localStorage.getItem("NykaaWish"))
+
+  // getWishStore.push(prodWish)
+
+  // localStorage.setItem("NykaaWish" , JSON.stringify(getWishStore))
 
 }
 
