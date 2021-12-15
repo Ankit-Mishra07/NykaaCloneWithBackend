@@ -15,8 +15,13 @@ router.post("/", async (req, res) => {
 })
 
 router.get("/", async (req, res) => {
-    const cart = await Cart.find().limit(15)
-   return res.send(cart)
+    const cart = await Cart.find()
+    return res.send(cart)
+})
+
+router.delete("/:id", async (req, res) => {
+    const cart = await Cart.findByIdAndDelete(req.params.id)
+    return res.send(cart)
 })
 
 module.exports = router
