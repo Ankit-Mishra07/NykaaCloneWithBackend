@@ -1,13 +1,13 @@
 const express = require("express")
 
 const router = express.Router()
-const Product = require("../models/products.model")
+const Cart = require("../models/cart.model")
 router.post("/", async (req, res) => {
     try{
 
-        const product = await Product.create(req.body)
+        const cart = await Cart.create(req.body)
 
-        return res.status(201).send(product)
+        return res.status(201).send(cart)
 
     }catch(e) {
         return res.status(500).json({status: "Failed", message: e.message})
@@ -15,8 +15,8 @@ router.post("/", async (req, res) => {
 })
 
 router.get("/", async (req, res) => {
-    const products = await Product.find().limit(15)
-   return res.send(products)
+    const cart = await Cart.find().limit(15)
+   return res.send(cart)
 })
 
 module.exports = router

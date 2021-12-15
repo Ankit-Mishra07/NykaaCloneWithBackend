@@ -44,10 +44,7 @@ app.get("/ProductNykaaCosmetics",async (req, res) => {
     return res.render("ProductNykaaCosmetics")
 })
 
-app.get("/all", async (req, res) => {
-    const products = await Product.find().limit(15)
-   return res.send(products)
-})
+
 
 app.get("/Myprofile", (req, res) => {
     return res.render("Myprofile")
@@ -77,14 +74,15 @@ app.get("/offer", (req, res) => {
 
 
 
-
-
-
-
-
 const productcontroller = require("./controllers/product.controller")
 
 app.use("/prod", productcontroller)
+app.use("/all", productcontroller)
+
+const cartController = require("./controllers/cart.controller")
+
+app.use("/addcart", cartController)
+
 
 module.exports = app
 
