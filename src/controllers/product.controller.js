@@ -14,9 +14,13 @@ router.post("/", async (req, res) => {
     }
 })
 
-router.get("/", async (req, res) => {
-    const products = await Product.find().limit(15)
+router.get("/lotohigh", async (req, res) => {
+    const products = await Product.find().sort({price : 1}).limit(15)
    return res.send(products)
 })
 
+router.get("/hitolo", async (req, res) => {
+    const products = await Product.find().sort({price : -1}).limit(15)
+   return res.send(products)
+})
 module.exports = router
