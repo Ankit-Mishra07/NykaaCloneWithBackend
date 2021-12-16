@@ -29,6 +29,14 @@ function first(){
   
   
   GETCosNykaaProducts()
+  bo.addEventListener("click",()=>{
+    window.scrollTo({
+    top:600,
+       left :0,
+       behavior:"smooth"
+    })
+})
+
 }
 function second(){
   bo.style.backgroundColor="#F3F3F3"
@@ -52,6 +60,14 @@ function second(){
   
   GETCosNykaaProducts()
   console.log(page)
+  to.addEventListener("click",()=>{
+    window.scrollTo({
+    top:600,
+       left :0,
+       behavior:"smooth"
+    })
+})
+
 }
 console.log(page)
 function third(){
@@ -75,6 +91,14 @@ function third(){
   
   
   GETCosNykaaProducts()
+  tho.addEventListener("click",()=>{
+    window.scrollTo({
+    top:600,
+       left :0,
+       behavior:"smooth"
+    })
+})
+
 }
 function fourth(){
   bo.style.backgroundColor="#F3F3F3"
@@ -97,6 +121,13 @@ function fourth(){
   
   
   GETCosNykaaProducts()
+  fo.addEventListener("click",()=>{
+    window.scrollTo({
+    top:600,
+       left :0,
+       behavior:"smooth"
+    })
+})
 }
 function five(){
   bo.style.backgroundColor="#F3F3F3"
@@ -120,6 +151,13 @@ function five(){
   
   
   GETCosNykaaProducts()
+  fi.addEventListener("click",()=>{
+    window.scrollTo({
+    top:600,
+       left :0,
+       behavior:"smooth"
+    })
+})
 }
 
 
@@ -133,7 +171,7 @@ function sixth(){
   si.style.backgroundColor="#fc2779";
   se.style.backgroundColor="#F3F3F3";
   ei.style.backgroundColor="#F3F3F3";
-  page=5
+  page=6
   async function GETCosNykaaProducts() {
 
     let res = await fetch(`http://localhost:2005/pages?page=${page}&size=15`)
@@ -146,6 +184,13 @@ function sixth(){
   
   
   GETCosNykaaProducts()
+  si.addEventListener("click",()=>{
+    window.scrollTo({
+    top:600,
+       left :0,
+       behavior:"smooth"
+    })
+})
 }
 
 
@@ -158,7 +203,7 @@ function seven(){
   si.style.backgroundColor="#F3F3F3";
   se.style.backgroundColor="#fc2779";
   ei.style.backgroundColor="#F3F3F3";
-  page=5
+  page=7
   async function GETCosNykaaProducts() {
 
     let res = await fetch(`http://localhost:2005/pages?page=${page}&size=15`)
@@ -171,6 +216,13 @@ function seven(){
   
   
   GETCosNykaaProducts()
+  se.addEventListener("click",()=>{
+    window.scrollTo({
+    top:600,
+       left :0,
+       behavior:"smooth"
+    })
+})
 }
 function eight(){
   bo.style.backgroundColor="#F3F3F3"
@@ -181,7 +233,7 @@ function eight(){
   si.style.backgroundColor="#F3F3F3";
   se.style.backgroundColor="#F3F3F3";
   ei.style.backgroundColor="#fc2779";
-  page=5
+  page=8
   async function GETCosNykaaProducts() {
 
     let res = await fetch(`http://localhost:2005/pages?page=${page}&size=15`)
@@ -194,6 +246,13 @@ function eight(){
   
   
   GETCosNykaaProducts()
+  ei.addEventListener("click",()=>{
+    window.scrollTo({
+    top:600,
+       left :0,
+       behavior:"smooth"
+    })
+})
 }
 
 
