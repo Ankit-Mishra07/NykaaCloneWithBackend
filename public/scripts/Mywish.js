@@ -19,7 +19,6 @@ async function WishFromDataBase() {
     })
   
     let data = await res.json()
-    console.log(data)
     
     prod_count.textContent = "(" + data.length + ")"
     AppendtoMYWISH_BOX(data)

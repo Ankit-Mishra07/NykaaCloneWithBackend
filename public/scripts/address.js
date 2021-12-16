@@ -1,4 +1,8 @@
 
+
+
+
+
 let smallemail_ = document.querySelector(".smallemail")
 
 if(localStorage.getItem("userData") === null) {
@@ -6,6 +10,11 @@ if(localStorage.getItem("userData") === null) {
 }
 
 let getuserData = JSON.parse(localStorage.getItem("userData"))
+
+if(getuserData.length === 0 || getuserData === null){
+  alert("Please Signin")
+  window.location.href = "/login"
+}
 
 smallemail_.textContent = getuserData[getuserData.length-1].email
 
@@ -46,12 +55,23 @@ function ShownewADDRESSE() {
 
 let cartiteam = document.getElementById("cartiteam")
 
-let getNykaaCArt = JSON.parse(localStorage.getItem("NykaaCart")) 
+// let getNykaaCArt = JSON.parse(localStorage.getItem("NykaaCart")) 
 
 
 let number__cart = document.querySelector(".number__cart")
-number__cart.textContent = getNykaaCArt.length
 
+async function CartdataBase() {
+  let res = await fetch("http://localhost:2005/addcart")
+  
+  let data = await res.json()
+  
+  number__cart.textContent = data.length
+  
+
+  
+  AppendtoCartItem(data)
+  }
+  CartdataBase()
 
 
 function AppendtoCartItem(getNykaaCArt) {
@@ -96,9 +116,8 @@ getNykaaCArt.forEach((prod) => {
 })
 
 }
-AppendtoCartItem(getNykaaCArt)
 
-localStorage.setItem("NykaaCart" , JSON.stringify(getNykaaCArt))
+// localStorage.setItem("NykaaCart" , JSON.stringify(getNykaaCArt))
 
 
 let NYkaaTotal = JSON.parse(localStorage.getItem("NykaaTotal"))
@@ -180,7 +199,7 @@ function delivery()
     pc.value = "";
     add.value = "";
     
-    window.location.href = "payment.html";
+    window.location.href = "/payment";
 }
 
 

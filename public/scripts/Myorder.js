@@ -1,59 +1,13 @@
 
 
-// let orders = [
-//     {
-//         image: "https://images-static.nykaa.com/media/catalog/product/0/e/0e16a77minim00000022.jpg",
-
-//         name: "Minimalist Super Value Vitamin C 10% Stable Serum Combo",
-
-//         price: 1258,
-
-//         quantity: 2,
-//     },
-
-//     {
-//         image: "https://images-static.nykaa.com/media/catalog/product/b/2/b2ad938minim00000027.jpg",
-
-//         name: "Minimalist Multi-vitamin SPF 50 PA ++++ Sunscreen For Complete Sun Protection",
-
-//         price: 379,
-
-//         quantity: 1,
-//     },
-
-//     {
-//         image: "https://images-static.nykaa.com/media/catalog/product/8/1/81fe938minim00000019.jpg",
-
-//         name: "Minimalist 2% Salicylic Acid + Lha Face Cleanser For Oil Control & Acne",
-
-//         price: 284,
-
-//         quantity: 5,
-//     },
-
-//     {
-//         image: "https://images-static.nykaa.com/media/catalog/product/9/b/9b3ee7fminim00000020.jpg",
-
-//         name: "Minimalist Ctm Combo",
-
-//         price: 942,
-
-//         quantity: 1
-//     }
-// ]
-
-
-// if(localStorage.getItem("MyNykaaOrder") === null){
-//     localStorage.setItem("MyNykaaOrder", JSON.stringify([]));
-// }
-
-
 let parent = document.getElementById("parent_box");
 
 
-let data = JSON.parse(localStorage.getItem("MyNykaaOrder"));
+// let data = JSON.parse(localStorage.getItem("MyNykaaOrder"));
 
-// console.log(data);
+async function getOrderData() {
+    let res = await fetch("http://localhost:2005/order")
+    let data = await res.json()
 
 data.forEach((item)=>{
 
@@ -115,5 +69,38 @@ data.forEach((item)=>{
 
 
 })
+}
 
-localStorage.setItem("MyNykaaOrder" , JSON.stringify([]))
+getOrderData()
+// localStorage.setItem("MyNykaaOrder" , JSON.stringify([]))
+
+
+async function getDLTData() {
+    
+    let res = await fetch("http://localhost:2005/order")
+    let data = await res.json()
+    DLT(data)
+}
+
+function DLT(data) {
+
+
+    data.forEach((daa) => {
+
+        let dltorder = fetch(`http://localhost:2005/order/${daa._id}` , {
+            method: "DELETE"
+        })
+
+
+    })
+}
+
+
+
+
+setTimeout(() => {
+
+    
+ getDLTData() 
+ parent.innerHTML = null
+},9909)

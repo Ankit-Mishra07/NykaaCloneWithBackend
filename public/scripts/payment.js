@@ -24,13 +24,22 @@ localStorage.setItem("userData" , JSON.stringify(getuserData))
 
 let cartiteam = document.getElementById("cartiteam")
 
-let getNykaaCArt = JSON.parse(localStorage.getItem("NykaaCart")) 
+// let getNykaaCArt = JSON.parse(localStorage.getItem("NykaaCart")) 
 
 
 let number__cart = document.querySelector(".number__cart")
-number__cart.textContent = getNykaaCArt.length
 
+async function CartdataBase() {
+  let res = await fetch("http://localhost:2005/addcart")
+  
+  let data = await res.json()
+  
+  number__cart.textContent = data.length  
 
+  
+  AppendtoCartItem(data)
+  }
+  CartdataBase()
 
 function AppendtoCartItem(getNykaaCArt) {
 cartiteam.innerHTML = null
@@ -74,9 +83,8 @@ getNykaaCArt.forEach((prod) => {
 })
 
 }
-AppendtoCartItem(getNykaaCArt)
 
-localStorage.setItem("NykaaCart" , JSON.stringify(getNykaaCArt))
+// localStorage.setItem("NykaaCart" , JSON.stringify(getNykaaCArt))
 
 
 let NYkaaTotal = JSON.parse(localStorage.getItem("NykaaTotal"))
@@ -137,28 +145,56 @@ let final_payMent_text = document.querySelector("#final_payment_text")
 final_payMent_text.addEventListener("click" , funfinal_payment_text)
 
 function funfinal_payment_text() {
+  
+  let number = document.querySelector(".card___num").value
+  
+  if(number.toString().length !== 16) {
+    
+    alert("Invalid Card Number ")
+    return
+}
 
-  let MyNykaaOrDer = JSON.parse(localStorage.getItem("MyNykaaOrder"))
+  // let MyNykaaOrDer = JSON.parse(localStorage.getItem("MyNykaaOrder"))
 
-  let getCartT = JSON.parse(localStorage.getItem("NykaaCart"))
 
-  getCartT.forEach((prod) => {
-    MyNykaaOrDer.push(prod)
+  async function getDataaa() {
+
+  let getDatCart = await fetch("http://localhost:2005/addcart")
+  let data = await getDatCart.json()
+  
+  data.forEach((DATAA) => {
+  
+   fetch("http://localhost:2005/order", {
+  
+    method : "POST",
+    body : JSON.stringify(DATAA),
+    headers : {
+      "Content-Type": "application/json"
+    }
+    })
+    fetch(`http://localhost:2005/addcart/${DATAA._id}` , {
+      method : "DELETE"
+    })
   })
 
 
 
-  // if(JSON.parse(localStorage.getItem("NykaaCart")).length > 0) {
-  // localStorage.setItem("NykaaCart", JSON.stringify([]))
-  // }
+}
 
-  localStorage.setItem("MyNykaaOrder" , JSON.stringify(MyNykaaOrDer))
+getDataaa()
 
-  setTimeout(() => {
-    localStorage.setItem("NykaaCart" , JSON.stringify([]))
-    window.location.href = "sucess.html"
-  },500)
+
+  // localStorage.setItem("MyNykaaOrder" , JSON.stringify(MyNykaaOrDer))
   
+ 
+  
+  if(number.toString().length === 16) {
+    setTimeout(() => {
+
+      window.location.href = "/success"
+    }, 1500)
+
+}
 
 
 }

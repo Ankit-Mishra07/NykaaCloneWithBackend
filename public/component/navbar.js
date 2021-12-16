@@ -22,7 +22,7 @@ function navbar() {
 <div class="second-bar">
    
     <ul class="second-navlist">
-      <li> <a href="index.html"><img src="https://th.bing.com/th/id/OIP.FtW_F_xyCB7utV0PyI8FeAHaCb?w=308&h=114&c=7&r=0&o=5&pid=1.7" alt=""  id="nykaa-logo"></a></li>
+      <li> <a href="/"><img src="https://th.bing.com/th/id/OIP.FtW_F_xyCB7utV0PyI8FeAHaCb?w=308&h=114&c=7&r=0&o=5&pid=1.7" alt=""  id="nykaa-logo"></a></li>
        <li><a href="/">CATEGORIES</li></a>
        <li><a href="/ProductNykaaCosmetics" class="show-brandbox">BRANDS</a></li>
        <li><a href="/" class="show-nykaa_fashionBox">NYKAA FASHION</a></li>
@@ -707,7 +707,7 @@ class="search-resultbox">
     <div class="ifempty">
             <img src="https://www.bing.com/th?id=OIP.Ow0OehhCThAxjjJc04krdAHaHa&w=101&h=101&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2" alt="">
             <p>Your Shopping Bag is Empty</p>
-            <a href="ProductNykaaCosmetics.html"><button class="start-shopping">START SHOPPING > </button></a>
+            <a href="/ProductNykaaCosmetics"><button class="start-shopping">START SHOPPING > </button></a>
     </div>
 
     <div class="Show-products-boxescont">
@@ -728,7 +728,7 @@ class="search-resultbox">
             <p class="Toatlrupee">₹1500</p>
         </div>
 
-        <a href="address.html" class="proceedToPay">
+        <a href="/address" class="proceedToPay">
             <P>PROCEED > </P>
         </a>
     </div>
@@ -1496,7 +1496,7 @@ class="search-resultbox">
     
         
         </li>
-        <li><a href="offer.html" id="OFFERS">OFFERS</a></li>
+        <li><a href="/offer" id="OFFERS">OFFERS</a></li>
     </ul>
 
     

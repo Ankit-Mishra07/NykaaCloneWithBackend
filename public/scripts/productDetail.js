@@ -146,20 +146,34 @@ let AddtoBag_btn = document.querySelector(".AddtoBag_btn")
 AddtoBag_btn.addEventListener("click" , fnAddtoBag_btn)
 
 function fnAddtoBag_btn() {
-
+  
 
   let getNykaCart = JSON.parse(localStorage.getItem("NykaaCart"))
 
   let dataa = JSON.parse(localStorage.getItem('ProductDetail'))
   let dataalast = dataa[dataa.length-1]
 
+  console.log(dataalast)
+  fetch("http://localhost:2005/addcart", {
+    method: "POST",
+    body : JSON.stringify(dataalast),
+    headers : {
+      "Content-Type" : "application/json"
+    }
+  })
+  .then(res => console.log(res))
+  .catch(e => console.log("error"))
+
+
   getNykaCart.push(dataalast)
 
   localStorage.setItem("NykaaCart" , JSON.stringify(getNykaCart))
 
   localStorage.setItem("ProductDetail", JSON.stringify(dataa))
+setTimeout(() => {
 
-window.location.href = "ProductDetail.html"
+  window.location.href = "/ProductDetail"
+},1000)
 
 }
 

@@ -59,7 +59,6 @@ function second(){
   
   
   GETCosNykaaProducts()
-  console.log(page)
   to.addEventListener("click",()=>{
     window.scrollTo({
     top:600,
@@ -69,7 +68,6 @@ function second(){
 })
 
 }
-console.log(page)
 function third(){
   bo.style.backgroundColor="#F3F3F3"
   to.style.backgroundColor="#F3F3F3"
@@ -85,7 +83,6 @@ function third(){
     let res = await fetch(`http://localhost:2005/pages?page=${page}&size=15`)
     
     let data = await res.json()
-    console.log(data.products);
    AppendToProCont(data.products)
   }
   
@@ -115,7 +112,6 @@ function fourth(){
     let res = await fetch(`http://localhost:2005/pages?page=${page}&size=15`)
     
     let data = await res.json()
-    console.log(data.products);
    AppendToProCont(data.products)
   }
   
@@ -144,7 +140,6 @@ function five(){
     let res = await fetch(`http://localhost:2005/pages?page=${page}&size=15`)
     
     let data = await res.json()
-    console.log(data.products);
    AppendToProCont(data.products)
   }
   
@@ -177,7 +172,6 @@ function sixth(){
     let res = await fetch(`http://localhost:2005/pages?page=${page}&size=15`)
     
     let data = await res.json()
-    console.log(data.products);
    AppendToProCont(data.products)
   }
   
@@ -209,7 +203,6 @@ function seven(){
     let res = await fetch(`http://localhost:2005/pages?page=${page}&size=15`)
     
     let data = await res.json()
-    console.log(data.products);
    AppendToProCont(data.products)
   }
   
@@ -239,7 +232,6 @@ function eight(){
     let res = await fetch(`http://localhost:2005/pages?page=${page}&size=15`)
     
     let data = await res.json()
-    console.log(data.products);
    AppendToProCont(data.products)
   }
   
@@ -254,6 +246,8 @@ function eight(){
     })
 })
 }
+
+
 
 
 var slideindexval = 1;
@@ -562,7 +556,7 @@ SORTHIGHTOLOW.addEventListener("click" , fnSORTHIGHTOLOW)
  async function fnSORTHIGHTOLOW() {
 
 
-  let res = await fetch(`http://localhost:2005/all`)
+  let res = await fetch(`http://localhost:2005/all/hitolo`)
 
   let data = await res.json()
     
@@ -575,7 +569,7 @@ SORTHIGHTOLOW.addEventListener("click" , fnSORTHIGHTOLOW)
    SORTHIGHTOLOW.style.backgroundColor = "#fc3a84"
    SORTLOWTOHIGH.style.backgroundColor = "#fff"
    pop_texts.textContent = "Price: High To Low"
-    
+    // first()
 }
 
 let SORTLOWTOHIGH = document.querySelector(".SORTLOWTOHIGH")
@@ -583,7 +577,8 @@ SORTLOWTOHIGH.addEventListener("click" , fnSORTLOWTOHIGH)
 
 async function fnSORTLOWTOHIGH() {
 
-  let res = await fetch(`http://localhost:2005/all`)
+
+  let res = await fetch(`http://localhost:2005/all/lotohigh`)
 
   let data = await res.json()
     
@@ -596,6 +591,9 @@ async function fnSORTLOWTOHIGH() {
   SORTHIGHTOLOW.style.backgroundColor = "#fff"
   SORTLOWTOHIGH.style.backgroundColor = "#fc3a84"
    pop_texts.textContent = "Price: Low To High"
+
+
+  //  first()
 }
 
 
@@ -605,4 +603,5 @@ function fnSORTPOPULARITY() {
   SORTHIGHTOLOW.style.backgroundColor = "#fff"
   SORTLOWTOHIGH.style.backgroundColor = "#fff"
   GETCosNykaaProducts()
+  // first()
 }

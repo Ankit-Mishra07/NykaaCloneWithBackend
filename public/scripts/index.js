@@ -234,11 +234,11 @@ cart__icon.addEventListener("click" , ShowShoppingBag)
 
 let shoppingBag = document.querySelector(".Shopping-bag-box")
 let chat_ty = document.querySelector(".ForChatT")
-let arrowto_UP = document.querySelector(".arrow") 
+// let arrowto_UP = document.querySelector(".arrow") 
 function ShowShoppingBag() {
     shoppingBag.style.display = "block"
     chat_ty.style.display = "none"
-    arrowto_UP.style.display = "none"
+    // arrowto_UP.style.display = "none"
 }
 
 let shoppingBackBtn = document.querySelector(".shoppingback-btn")
@@ -248,7 +248,7 @@ shoppingBackBtn.addEventListener("click" , HideShoppingBag)
 function HideShoppingBag() {
     shoppingBag.style.display = "none"
     chat_ty.style.display = "block"
-    arrowto_UP.style.display = "block"
+    // arrowto_UP.style.display = "block"
 }
 
 
@@ -275,13 +275,7 @@ if(localStorage.getItem("NykaaCart") === null) {
       localStorage.setItem("NykaaTotal" , JSON.stringify([]))
   }
 
-//  let getLocalCart = JSON.parse(localStorage.getItem("NykaaCart"))
 
-
-//   let supp = document.querySelector(".supp")
-//   supp.textContent = getLocalCart.length
-
-  //let showCart_Products = document.querySelector(".showCart-Products")
 let multiple_prod_box = document.querySelector(".multiple_prod_box")
 
   async function CartdataBase() {
@@ -289,11 +283,20 @@ let multiple_prod_box = document.querySelector(".multiple_prod_box")
   
   let data = await res.json()
 
-  
-  let supp = document.querySelector(".supp")
-  supp.textContent = data.length
+  if(data.length === 0) {
+
+      ifempty.style.display = "block"
+      Show_products_boxescont.style.display = "none"
+}else {
+    ifempty.style.display = "none"
+      Show_products_boxescont.style.display = "block"
+}
+      
   
   appendtobag(data)
+  let supp = document.querySelector(".supp")
+  supp.textContent = data.length
+    
   }
   CartdataBase()
 
@@ -387,11 +390,21 @@ localStorage.setItem("NykaaTotal" , JSON.stringify(NykaaTotal))
 
 function DeleteFrom_Bag(produ, dlt_btn) {
 
-    let GETTODLT = fetch(`http://localhost:2005/dltcart/${produ._id}`, {
+    fetch(`http://localhost:2005/addcart/${produ._id}`, {
         method : "DELETE"
     })
 
+    let NykaaTotal = JSON.parse(localStorage.getItem("NykaaTotal"))
 
+    let pro = NykaaTotal[NykaaTotal.length-1] - Number(produ.price)
+
+    let grand_text = document.querySelector(".Toatlrupee")
+    grand_text.textContent = "₹" +  pro
+    
+    NykaaTotal.push(pro)
+    
+    localStorage.setItem("NykaaTotal" , JSON.stringify(NykaaTotal))
+    
     // let getCartStORE = JSON.parse(localStorage.getItem("NykaaCart"))
     // let index = getCartStORE.indexOf(produ)
     // getCartStORE.splice(index, 1)
