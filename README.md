@@ -17,7 +17,7 @@
 # Installing and Running
 
 #### To run this application on your local system, execute the following commands on your terminal/command line:
-#### git clone https://github.com/Ankit-Mishra07/NykaaCloneWithBackend.git
-#### npm i
-#### npm run server
+#### `git clone` https://github.com/Ankit-Mishra07/NykaaCloneWithBackend.git
+#### `npm i`
+#### `npm run server`
 #### create a .env file with username and password of mongodb
