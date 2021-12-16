@@ -358,29 +358,34 @@ body {
   }
 
 
-  /* for pagination */
 
-  .page{
-    width: 70%;
-  
-    margin-top: 15%;
-    margin-bottom: 0%;
-    transform: translateX(35%);
-    background-color: #F3F3F3;
-    
 
-}
-.page2{
-    display: flex;
-    justify-content: center;
-    gap: 1%;
-    
-}
-.b1{
-    width: 2%;
-    height: 5%;
-    border-radius: 50%;
-    background-color: #F3F3F3;
-    text-align: center;
-    
-}
+    /* for pagination */
+
+    .page{
+        width: 70%;
+      
+        margin-top: 15%;
+        margin-bottom: 0%;
+        transform: translateX(35%);
+        background-color: #F3F3F3;
+        
+     
+    }
+    .page2{
+        display: flex;
+        justify-content: center;
+        gap: 1%;
+        
+    }
+    #bo {
+        background-color: #fc2779;
+    }
+    .b1{
+        width: 2%;
+        height: 5%;
+        border-radius: 50%;
+        background-color: #F3F3F3;
+        text-align: center;
+        cursor: pointer;
+    }
