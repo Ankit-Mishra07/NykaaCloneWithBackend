@@ -68,6 +68,9 @@ app.get("/Mywish", (req, res) => {
     return res.render("Mywish")
 })
 
+app.get("/Myorder", (req, res) => {
+    return res.render("Myorder")
+})
 app.get("/offer", (req, res) => {
     return res.render("offer")
 })
@@ -79,11 +82,8 @@ const productcontroller = require("./controllers/product.controller")
 app.use("/prod", productcontroller)
 app.use("/all", productcontroller)
 
-const cartController = require("./controllers/cart.controller")
 
-app.use("/addcart", cartController)
 
-app.use("/dltcart", cartController)
 app.get("/pages",async(req,res)=>{
     try{
         const page=+req.query.page || 10; 
@@ -92,7 +92,6 @@ app.get("/pages",async(req,res)=>{
         const skip = (page-1)*size
         const products  = await Product.find().skip(skip).limit(size).lean().exec()
         const totalpages = Math.ceil(await Product.find().countDocuments()/size)
-        console.log({products,totalpages})
         return res.json({products,totalpages})
       
 
@@ -104,6 +103,27 @@ app.get("/pages",async(req,res)=>{
 
     }
 })
+
+
+
+const cartController = require("./controllers/cart.controller")
+
+app.use("/addcart", cartController)
+
+
+const wishController = require("./controllers/wishlist.controller")
+
+app.use("/addwish", wishController)
+app.use("/dltwish", wishController)
+
+const loginController = require("./controllers/login.controller")
+
+app.use("/user", loginController)
+
+
+const orderController = require("./controllers/order.controller")
+
+app.use("/order", orderController)
 
 module.exports = app
 
