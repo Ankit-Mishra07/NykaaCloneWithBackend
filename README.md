@@ -22,6 +22,17 @@
 #### `npm run server`
 #### create a .env file with username and password of mongodb
 
+# Features
+* There is login and logout functionality.
+* Elegant Navbar for easy navigation between pages and products.
+* Customer can view the products on product page and filter it high-price to low-price and low-price to high-price.
+* Product detail page shows the selected product images and information, where customer can use Zoomer to zoom the product images.
+* Customer can add the product into shopping bag by two ways one from the product page and second from the product detail page.
+* Customer can add and remove the product from the whishlist.
+* In product page paggination feature is available so that user can easily navigate one page to another and see the products in systematic manner.
+* Payment page which calculates the products prices dynamically.
+* My account page which contain purchase history and the details related to respected customer
+
 
 # Authors
 #### 1. Ankit Mishra
