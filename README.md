@@ -33,6 +33,7 @@
 * Payment page which calculates the products prices dynamically.
 * My account page which contain purchase history and the details related to respected customer
 
+# Steps to navigate the website:
 
 # Authors
 #### 1. Ankit Mishra
