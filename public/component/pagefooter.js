@@ -89,7 +89,7 @@ function FOOTER() {
         <div class="foo_menu_container">
         
             <ul>
-                <li><img src="" alt="nykaa logo"></li>
+                <li><img src="https://cdn.freelogovectors.net/wp-content/uploads/2021/01/nykaa-logo-freelogovectors.net_.png" alt="nykaa logo" alt="nykaa logo"></li>
                 <li><a href="#">WHO ARE WE?</a></li>
                 <li><a href="#">CAREERS</a></li>
                 <li><a href="#">AUTHENTICITY</a></li>
