@@ -34,6 +34,31 @@
 * My account page which contain purchase history and the details related to respected customer
 
 # Steps to navigate the website:
+* On the Landing Page navbar, user can click on the 'Sign In' option to either Sign In by googleOauth or Create an Account
+* Once the user has logged in, they are taken back to the Landing Page.
+  * User will get his name on the nav-bar and dropdown will appear which consist of section like order>profile>wallet>whishlist> and logout.
+  * User can go to profile section where he ask to write the address.
+* On the top nav-bar, the user can navigate to the following categories: Makeup > Skin > Hair, Appliances, Personal Care, Natural,Mom & Baby,Health & Wellness,Men,Fragrance,& LUXE to open the products page
+* On the Products Page
+  * Hovering on each product will display a 'Add to bag' and 'whishlist' button. 
+  * Clicking on add to bag, the user will add the product to their Shopping Bag.
+  * Clicking on whishlist , the user will add the product to thier whislist.
+* If the user clicks on the name of the product, they'll be taken to the Produt's details page
+  * On the Product's details page, the user can view all the product specifications, and also add the product to their shopping bag
+* On the Shopping Bag page
+  * The user can remove a product from the shopping bag
+  * Change the quantity of the product
+  * Apply coupoun code if any.
+* On proceeding to Checkout, the user is asked to
+  * Fill their address and contact details.
+
+  * Enter their Credit/Debit card details.
+
+
+* Place the Order
+  * On placing the Order, Success page displays the order no. generated for the user and the shopping bag is also cleared.
+  * User can see the order detail in "order" section on landing page .
+
 
 # Screenshots
 
