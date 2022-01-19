@@ -20,7 +20,9 @@ function first(){
   page = 1;
   async function GETCosNykaaProducts() {
 
-    let res = await fetch(`http://localhost:2005/pages?page=${page}&size=15`)
+    let port = process.env.PORT || 2005;
+
+    let res = await fetch(`http://localhost:${port}/pages?page=${page}&size=15`)
     
     let data = await res.json()
     console.log(data.products);

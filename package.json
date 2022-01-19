@@ -11,10 +11,14 @@
     "mongoose": "^6.0.13",
     "multer": "^1.4.4"
   },
+  "engines": {
+    "node": "14.16.0"
+  },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "nodemon ./src/server"
+    "server": "nodemon ./src/server",
+    "start": "node ./src/server"	
   },
   "keywords": [],
   "author": "",
