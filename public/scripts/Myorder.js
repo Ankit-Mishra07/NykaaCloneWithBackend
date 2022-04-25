@@ -103,4 +103,4 @@ setTimeout(() => {
     
  getDLTData() 
  parent.innerHTML = null
-},9909)
+},99099)

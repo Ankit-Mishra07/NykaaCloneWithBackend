@@ -39,9 +39,9 @@ function navbar() {
         <a id="FOR-Sign" href="/login"><i id="user--icon" class="fa">&#xf2c0;</i><span class="account-text">Account</span></a>
         <a id="FOR-Logged"><i id="user--icon" class="fa">&#xf2c0;</i><span class="user-name">Ankit</span></a>
         <div class="PROFILE-NAVIGATE">
-        <a href="Myorder.html">📑 &nbsp; Orders</a> 
+        <a href="/Myorder">📑 &nbsp; Orders</a> 
         <a href="/Myprofile">웃 &nbsp; Profile</a>
-        <a href="Myprofile.html">⍌ &nbsp; Wallet</a>
+        <a href="/Myprofile">⍌ &nbsp; Wallet</a>
         <a href="/Mywish">♡ &nbsp; Wishlist</a>
         <a class="Sign-Out" href="/">⊘ &nbsp; Logout</a>
         </div>
