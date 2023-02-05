@@ -2,7 +2,8 @@ const express = require("express")
 
 const app = express()
 
-const Product = require("./models/products.model")
+const Product = require("./src/models/products.model")
+const connect = require("./src/configs/db")
 
 app.use(express.json())
 app.use(express.static("public"))
@@ -77,7 +78,7 @@ app.get("/offer", (req, res) => {
 
 
 
-const productcontroller = require("./controllers/product.controller")
+const productcontroller = require("./src/controllers/product.controller")
 
 app.use("/prod", productcontroller)
 app.use("/all", productcontroller)
@@ -106,27 +107,35 @@ app.get("/pages",async(req,res)=>{
 
 
 
-const cartController = require("./controllers/cart.controller")
+const cartController = require("./src/controllers/cart.controller")
 
 app.use("/addcart", cartController)
 
 
-const wishController = require("./controllers/wishlist.controller")
+const wishController = require("./src/controllers/wishlist.controller")
 
 app.use("/addwish", wishController)
 app.use("/dltwish", wishController)
 
-const loginController = require("./controllers/login.controller")
+const loginController = require("./src/controllers/login.controller")
 
 app.use("/user", loginController)
 
 
-const orderController = require("./controllers/order.controller")
+const orderController = require("./src/controllers/order.controller")
 
 app.use("/order", orderController)
 
-module.exports = app
+// module.exports = app
 
+
+const port = process.env.PORT || 2005;
+
+app.listen(port, async (req, res) => {
+    await connect()
+
+    console.log(`Listening on PORT ${port}`)
+})
 
 
 
